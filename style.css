@@ -1,0 +1,134 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #274f4e;
+  /* background-image: radial-gradient(#94c6f7, #112222); */
+  color: #aa8888;
+  font-family: helvetica;
+}
+
+.blob {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  border-radius: 100%;
+  -webkit-animation: myturn linear 16s infinite;
+  -moz-animation: myturn linear 16s infinite;
+}
+
+.blob-piece {
+  position: absolute;
+  background: #557788;
+  width: 150px;
+  height: 160px;
+  border-radius: 100%;
+}
+
+.blob-piece:nth-child(1) {
+  top: -10px;
+  left: -10px;
+  -webkit-animation: mytopdown linear 3s infinite;
+  -moz-animation: mytopdown linear 3s infinite;
+  animation: mytopdown linear 3s infinite;
+}
+
+.blob-piece:nth-child(2) {
+  top: 10px;
+  left: 10px;
+  -webkit-animation: mytopleft linear 3s infinite;
+  -moz-animation: mytopleft linear 3s infinite;
+  animation: mytopleft linear 3s infinite;
+}
+
+.blob-piece:nth-child(3) {
+  top: 10px;
+  left: -10px;
+  -webkit-animation: mytopright linear 3s infinite;
+  -moz-animation: mytopright linear 3s infinite;
+  animation: mytopright linear 3s infinite;
+}
+
+
+/*** BLOB CUSTOMIZATIONS ***/
+.blob-1 {
+  width: 240px;
+  width: 240px;
+}
+
+.blob-1 .blob-piece {
+  background: orange;
+}
+
+.blob-2 {
+  top: 25%;
+  left: 30%;
+  /* animation-duration: 3s; */
+}
+
+.blob-2 .blob-piece {
+  animation-duration: 8s;
+}
+
+/* Mozila + Chrome */
+@keyframes mytopdown {
+  0% {
+    top: 0px;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    top: 10px;
+    transform: rotate(180deg) scale(1.04);
+  }
+  100% {
+    top: 0px;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes mytopleft {
+  0% {
+    top: 0px;
+    transform: rotate(0deg) scale(1.05);
+  }
+  50% {
+    top: 10px;
+    transform: rotate(180deg) scale(1);
+  }
+  100% {
+    top: 0px;
+    transform: rotate(360deg) scale(1.05);
+  }
+}
+
+@keyframes mytopright {
+  0% {
+    top: -10px;
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    top: 0px;
+    transform: rotate(180deg) scale(1.02);
+  }
+  100% {
+    top: -10px;
+    transform: rotate(360deg) scale();
+  }
+}
+
+@-webkit-keyframes myturn {
+  0% {
+    -webkit-transform: rotate(0deg) skewX(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg) skewX(0deg);
+  }
+}
